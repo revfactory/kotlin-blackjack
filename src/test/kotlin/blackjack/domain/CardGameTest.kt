@@ -9,6 +9,6 @@ class CardGameTest : FunSpec({
         val game = CardGame(listOf(player))
         game.start()
 
-        player.cards.size shouldBe 2
+        player.cardCount() shouldBe 2
     }
 })

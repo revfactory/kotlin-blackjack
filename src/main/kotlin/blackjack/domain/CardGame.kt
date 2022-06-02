@@ -6,8 +6,16 @@ class CardGame(private val players: List<Player>) {
 
     fun start() {
         for (player in players) {
-            player.cards.add(cardDeck.draw())
-            player.cards.add(cardDeck.draw())
+            player.addCard(cardDeck.draw())
+            player.addCard(cardDeck.draw())
         }
+    }
+
+    fun turn() {
+        players
+    }
+
+    companion object {
+        const val RULE_MAX_POINT = 21
     }
 }
