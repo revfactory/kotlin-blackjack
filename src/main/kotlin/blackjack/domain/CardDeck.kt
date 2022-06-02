@@ -2,7 +2,7 @@ package blackjack.domain
 
 class CardDeck(deckCount: Int = 1) {
 
-    val cards = mutableListOf<Card>()
+    private val cards = mutableListOf<Card>()
 
     init {
         for (n in 1..deckCount) {
@@ -13,6 +13,10 @@ class CardDeck(deckCount: Int = 1) {
             }
         }
         cards.shuffle()
+    }
+
+    fun cardCount(): Int {
+        return cards.size
     }
 
     fun hasCard(): Boolean {
