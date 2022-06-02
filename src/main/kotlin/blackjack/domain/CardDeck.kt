@@ -14,4 +14,12 @@ class CardDeck(deckCount: Int = 1) {
         }
         cards.shuffle()
     }
+
+    fun hasCard(): Boolean {
+        return cards.isNotEmpty()
+    }
+
+    fun draw(): Card {
+        return cards.removeFirst()
+    }
 }

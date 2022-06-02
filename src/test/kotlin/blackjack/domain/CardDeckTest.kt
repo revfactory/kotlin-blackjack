@@ -17,4 +17,15 @@ class CardDeckTest : FunSpec({
         val cardDoubleDeck = CardDeck(2)
         cardDoubleDeck.cards.size shouldBe 104
     }
+
+    test("카드덱에서 랜덤으로 하나씩 카드를 꺼낼 수 있다.") {
+        val cardDeck = CardDeck()
+        val cards = mutableListOf<Card>()
+        while (cardDeck.hasCard()) {
+            cards.add(cardDeck.draw())
+        }
+
+        cardDeck.hasCard() shouldBe false
+        cards.size shouldBe 52
+    }
 })
