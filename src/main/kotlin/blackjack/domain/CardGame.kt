@@ -1,8 +1,16 @@
 package blackjack.domain
 
 class CardGame private constructor (players: List<Player>) {
-    val cardDeck: CardDeck = CardDeck()
-    val hands: List<Hand> = players.map { Hand(it) }
+    private val cardDeck: CardDeck = CardDeck()
+    private val hands: List<Hand> = players.map { Hand(it) }
+
+    fun players(): List<Player> {
+        return hands.map { it.player }
+    }
+
+    fun playerCards(): List<Pair<Player, List<Card>>> {
+        return hands.map { Pair(it.player, it.getCards()) }
+    }
 
     private fun deal() {
         hands.forEach {

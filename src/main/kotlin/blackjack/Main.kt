@@ -2,12 +2,12 @@ package blackjack
 
 import blackjack.domain.newGame
 import blackjack.ui.CardGameView.newGamePrint
-import blackjack.ui.InitializeView.inputPlayerInfo
+import blackjack.ui.PlayerView.inputPlayers
 
 fun main() {
-    val cardGame = newGame {
-        players(inputPlayerInfo())
+    newGame {
+        players(inputPlayers())
+    }.also {
+        newGamePrint(it)
     }
-
-    newGamePrint(cardGame)
 }

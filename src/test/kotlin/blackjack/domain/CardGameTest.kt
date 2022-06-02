@@ -8,8 +8,8 @@ class CardGameTest : FunSpec({
         val cardGame = newGame {
             players(listOf(Player()))
         }
-        cardGame.cardDeck.cardCount() shouldBe 50
-        cardGame.hands.size shouldBe 1
-        cardGame.hands[0].cardCount() shouldBe 2
+        cardGame.players().size shouldBe 1
+        val (_, cards) = cardGame.playerCards().first()
+        cards.size shouldBe 2
     }
 })
